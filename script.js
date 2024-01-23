@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to make a GET request and display the result
     async function makeRequest(endpoint, method) {
       try {
+
         const response = await fetch(`${baseURL}/${endpoint}`, { method });
         const data = await response.json();
-  
+
         document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        console.log(response);
       } catch (error) {
         console.error(error);
         document.getElementById('output').innerText = 'Error: ' + error.message;

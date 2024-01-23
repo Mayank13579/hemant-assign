@@ -7,18 +7,18 @@ const PORT = process.env.PORT || 3000;
 const baseURL = 'https://api.dapplooker.com/chart/87596cde-e5df-4a5d-9e72-7592d4861513?api_key=4721550ec26a47cabbf1aa0609ab7de3&output_format=json';
 
 // Array to store entities to exclude
-const entitiesToExclude = ['entity1', 'entity2']; // Add the entities you want to exclude from the list
+const entitiesToExclude = ['From Address', 'To Address','user','log']; // Add the entities you want to exclude from the list
 
 // Middleware to enable CORS
 app.use(cors());
 
-const corsOptions = {
-    origin: 'http://127.0.0.1:5500',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,  // enable set cookie
-  };
+// const corsOptions = {
+//     origin: 'http://127.0.0.1:5500',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,  // enable set cookie
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
 
 
 // Middleware to parse JSON requests
@@ -95,6 +95,7 @@ app.get('/api/tables', async (req, res, next) => {
     );
 
     res.json(validTables);
+    console.log(validTables)
   } catch (error) {
     console.error(error);
     next(error);
