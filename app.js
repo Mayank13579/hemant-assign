@@ -12,13 +12,13 @@ const entitiesToExclude = ['From Address', 'To Address','user','log']; // Add th
 // Middleware to enable CORS
 app.use(cors());
 
-// const corsOptions = {
-//     origin: 'http://127.0.0.1:5500',
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     credentials: true,  // enable set cookie
-//   };
+const corsOptions = {
+    origin: 'http://127.0.0.1:5500',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,  // enable set cookie
+  };
   
-//   app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
 
 
 // Middleware to parse JSON requests
